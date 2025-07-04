@@ -28,9 +28,6 @@ link :https://cimp-portal.vercel.app/
 > Club Creation Form  
 > Role Assignment Page  
 
-*(Add your screenshots here)*
-
-## 🚀 Getting Started
 
 ### Prerequisites
 - Node.js & npm
