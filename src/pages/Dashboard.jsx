@@ -50,16 +50,15 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#e8ebf6] to-[#d7d9ec] flex items-center justify-center px-4 py-10 relative">
-      
+      <div className="w-full max-w-6xl bg-white shadow-2xl rounded-3xl px-4 py-6 sm:p-8 relative">
+        {/* VIT Logo */}
+        <img
+          src="https://img.collegepravesh.com/2015/12/Vellore-Institute-of-Technology-Logo.png"
+          alt="VIT Logo"
+          className="absolute top-6 left-6 h-16 w-16 sm:h-20 sm:w-20 shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer"
+        />
 
-      <div className="w-full max-w-6xl bg-white shadow-2xl rounded-3xl p-8 relative">
-        {/* Logout Button */}
-        {/* VIT Logo Top-Left */}
-      <img
-        src="https://img.collegepravesh.com/2015/12/Vellore-Institute-of-Technology-Logo.png"
-        alt="VIT Logo"
-        className="absolute top-6 left-9 h-20 w-20 shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer"
-      />
+        {/* Logout */}
         <div className="absolute top-5 right-5">
           <button
             onClick={handleLogout}
@@ -69,12 +68,12 @@ export default function Dashboard() {
           </button>
         </div>
 
-        <h1 className="text-4xl font-extrabold text-center text-[#373f6e] mb-10">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center text-[#373f6e] mb-10">
           CIMP Admin Dashboard
         </h1>
 
-        {/* Navigation Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        {/* Navigation */}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
           <Link to="/create-club" className="dashboard-btn">➕ Create Club</Link>
           <Link to="/manage-members" className="dashboard-btn">🧑‍🤝‍🧑 Manage Members</Link>
           <Link to="/assign-roles" className="dashboard-btn">🎓 Assign Roles</Link>
@@ -108,8 +107,8 @@ export default function Dashboard() {
         </div>
 
         {/* Club Table */}
-        <div className="overflow-x-auto bg-[#f4f4fb] rounded-xl shadow-inner">
-          <table className="min-w-full text-left">
+        <div className="w-full overflow-x-auto bg-[#f4f4fb] rounded-xl shadow-inner">
+          <table className="min-w-full text-left text-sm">
             <thead className="bg-[#e0e0f0] text-[#373f6e] font-semibold">
               <tr>
                 <th className="px-4 py-3">Club Name</th>
@@ -122,25 +121,16 @@ export default function Dashboard() {
             <tbody>
               {filteredClubs.length > 0 ? (
                 filteredClubs.map((club, index) => (
-                  <tr
-                    key={index}
-                    className="border-t hover:bg-[#e8e8f8] transition duration-200"
-                  >
+                  <tr key={index} className="border-t hover:bg-[#e8e8f8] transition duration-200">
                     <td className="px-4 py-3 font-medium">{club.name}</td>
                     <td className="px-4 py-3">{club.category}</td>
                     <td className="px-4 py-3">
-                      {club.president.name}
-                      <br />
-                      <span className="text-xs text-gray-600">
-                        {club.president.reg}
-                      </span>
+                      {club.president.name}<br />
+                      <span className="text-xs text-gray-600">{club.president.reg}</span>
                     </td>
                     <td className="px-4 py-3">
-                      {club.faculty.name}
-                      <br />
-                      <span className="text-xs text-gray-600">
-                        {club.faculty.dept}
-                      </span>
+                      {club.faculty.name}<br />
+                      <span className="text-xs text-gray-600">{club.faculty.dept}</span>
                     </td>
                     <td className="px-4 py-3">{club.members}</td>
                   </tr>
@@ -163,12 +153,15 @@ export default function Dashboard() {
         </p>
       </div>
 
-      {/* Tailwind Styling for Dashboard Buttons */}
       <style>{`
         .dashboard-btn {
           background-color: #373f6e;
           color: white;
           padding: 0.75rem 1.5rem;
+          min-width: 200px;
+          width: 100%;
+          max-width: 300px;
+          text-align: center;
           border-radius: 0.75rem;
           font-weight: 600;
           transition: transform 0.2s, background-color 0.2s;
