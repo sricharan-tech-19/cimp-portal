@@ -2,6 +2,8 @@
 
 CIMP (Club Information Management Portal) is a full-stack web application built to manage and streamline club-related operations at VIT. It offers admin login, club creation, role assignment, and member tracking — all in a visually modern interface.
 
+link :https://cimp-portal.vercel.app/
+
 ![CIMP Banner](https://img.collegepravesh.com/2015/12/Vellore-Institute-of-Technology-Logo.png)
 
 ## 🔥 Features
